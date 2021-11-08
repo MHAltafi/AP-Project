@@ -4,3 +4,6 @@
 CMakeFiles/app.dir/src/main.cpp.o: ../include/screwdriver.h
 CMakeFiles/app.dir/src/main.cpp.o: ../src/main.cpp
 
+CMakeFiles/app.dir/src/screwdriver.cpp.o: ../include/screwdriver.h
+CMakeFiles/app.dir/src/screwdriver.cpp.o: ../src/screwdriver.cpp
+

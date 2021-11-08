@@ -1,7 +1,14 @@
+project(project)
 
 set(CMAKE_CXX_STANDARD 11)
+
+set(SOURCES
+	src/main.cpp
+    src/screwdriver.cpp
+)
+
 cmake_minimum_required(VERSION 3.0)
-project(project)
+
 include_directories(include/)
-file(GLOB SOURCES "src/*.cpp")
+
 add_executable(app ${SOURCES})

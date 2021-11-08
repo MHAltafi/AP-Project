@@ -3,6 +3,14 @@
 
 using namespace std;
 
+screwdriver::screwdriver(int headsize , int headtype , int len , float pricebydollar)
+{
+    set_head_size(headsize);
+    set_head_type(headtype);
+    set_length(len);
+    set_price(pricebydollar);
+}
+
 void screwdriver::set_head_size(int headsize)
 {
     if(headsize > 0 && headsize <=3)
@@ -52,4 +60,21 @@ void screwdriver::set_length(int len)
 int screwdriver::get_length() const
 {
     return length;
+}
+
+void screwdriver::set_price(float pricebydollar)
+{
+    if(pricebydollar > 0)
+    {
+        price = pricebydollar;
+    }
+    else
+    {
+        throw invalid_argument("Wrong price");
+    }
+}
+
+float screwdriver::get_price()
+{
+    return price;
 }

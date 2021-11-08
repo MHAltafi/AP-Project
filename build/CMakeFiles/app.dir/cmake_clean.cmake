@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/main.cpp.o"
+  "CMakeFiles/app.dir/src/screwdriver.cpp.o"
   "app"
   "app.pdb"
 )

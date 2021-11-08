@@ -5,7 +5,10 @@ using namespace std;
 
 
 int main()
-{
-    screwdriver one;
+{   
+
+    screwdriver x(2,2,2,2);
+    cout << x.get_head_size() << endl;
+    x.set_price(3);
     
 }

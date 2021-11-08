@@ -150,6 +150,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/screwdriver.o: src/screwdriver.cpp.o
+
+.PHONY : src/screwdriver.o
+
+# target to build an object file
+src/screwdriver.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/screwdriver.cpp.o
+.PHONY : src/screwdriver.cpp.o
+
+src/screwdriver.i: src/screwdriver.cpp.i
+
+.PHONY : src/screwdriver.i
+
+# target to preprocess a source file
+src/screwdriver.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/screwdriver.cpp.i
+.PHONY : src/screwdriver.cpp.i
+
+src/screwdriver.s: src/screwdriver.cpp.s
+
+.PHONY : src/screwdriver.s
+
+# target to generate assembly for a file
+src/screwdriver.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/screwdriver.cpp.s
+.PHONY : src/screwdriver.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/screwdriver.o"
+	@echo "... src/screwdriver.i"
+	@echo "... src/screwdriver.s"
 .PHONY : help
 
 
