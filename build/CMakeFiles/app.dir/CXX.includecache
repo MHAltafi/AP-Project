@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/screwdriver.h
+
+/mnt/d/cpp/project/src/main.cpp
+iostream
+-
+screwdriver.h
+/mnt/d/cpp/project/src/screwdriver.h
+
