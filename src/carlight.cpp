@@ -5,10 +5,42 @@ using namespace std;
 
 carlight::carlight(int col , int type , int brght , float prc)
 {
-    set_color(col);
-    set_light_type(type);
-    set_brightness(brght);
-    set_price(prc);
+    try
+    {
+        set_color(col);
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " White will be set for color." << endl;
+        set_color(1);
+    }
+    try
+    {
+        set_light_type(type);   
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " Headlight will be set for light type." << endl;
+        set_light_type(1);
+    }
+    try
+    {
+        set_brightness(brght);   
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " Brightness will be set to mid." << endl;
+        set_brightness(2);
+    }
+    try
+    {
+        set_price(prc);  
+    }
+    catch(out_of_range &s)
+    {
+        cout << s.what() << " Symmetric price will be used." << endl;
+        set_price(-prc);
+    }
 }
 
 void carlight::set_color(int col)
@@ -19,11 +51,11 @@ void carlight::set_color(int col)
     }
     else
     {
-        throw invalid_argument("Wrong color");
+        throw invalid_argument("This color doesn't exist.");
     }
 }
 
-int carlight::get_color()
+int carlight::get_color() const
 {
     return color;
 }
@@ -36,11 +68,11 @@ void carlight::set_light_type(int type)
     }
     else
     {
-        throw invalid_argument("Wrong type");
+        throw invalid_argument("Wrong light type.");
     }
 }
 
-int carlight::get_light_type()
+int carlight::get_light_type() const
 {
     return light_type;
 }
@@ -53,11 +85,11 @@ void carlight::set_brightness(int brght)
     }
     else
     {
-        throw invalid_argument("Wrong brightness");
+        throw invalid_argument("Wrong brightness.");
     }
 }
 
-int carlight::get_brighrness()
+int carlight::get_brighrness() const
 {
     return brightness;
 }
@@ -70,11 +102,11 @@ void carlight::set_price(float prc)
     }
     else
     {
-        throw out_of_range("wrong price");
+        throw out_of_range("Wrong price.");
     }
 }
 
-float carlight::get_price()
+float carlight::get_price() const
 {
     return price;
 }

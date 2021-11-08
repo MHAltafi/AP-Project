@@ -8,9 +8,9 @@ using namespace std;
 int main()
 {   
 
-    screwdriver x(2,2,2,2);
+    screwdriver x(1,2,2,2);
     cout << x.get_head_size() << endl;
     x.set_price(3);
-    carlight m(2,2,2,2);
-
+    carlight m(6,5,6,-6);
+    cout << m.get_price() << endl;
 }

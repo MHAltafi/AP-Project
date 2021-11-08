@@ -10,13 +10,13 @@ class carlight
     public:
     carlight(int col , int type , int brght , float prc);
     void set_color(int col);
-    int get_color();
+    int get_color() const;
     void set_light_type(int type);
-    int get_light_type();
+    int get_light_type() const;
     void set_brightness(int brght);
-    int get_brighrness();
+    int get_brighrness() const;
     void set_price(float prc);
-    float get_price();
+    float get_price() const;
 
     private:
     int color;
