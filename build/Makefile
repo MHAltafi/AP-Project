@@ -123,6 +123,33 @@ app/fast:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+src/carlight.o: src/carlight.cpp.o
+
+.PHONY : src/carlight.o
+
+# target to build an object file
+src/carlight.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/carlight.cpp.o
+.PHONY : src/carlight.cpp.o
+
+src/carlight.i: src/carlight.cpp.i
+
+.PHONY : src/carlight.i
+
+# target to preprocess a source file
+src/carlight.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/carlight.cpp.i
+.PHONY : src/carlight.cpp.i
+
+src/carlight.s: src/carlight.cpp.s
+
+.PHONY : src/carlight.s
+
+# target to generate assembly for a file
+src/carlight.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/carlight.cpp.s
+.PHONY : src/carlight.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -186,6 +213,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... app"
+	@echo "... src/carlight.o"
+	@echo "... src/carlight.i"
+	@echo "... src/carlight.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

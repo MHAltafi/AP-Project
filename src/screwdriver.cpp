@@ -19,7 +19,7 @@ void screwdriver::set_head_size(int headsize)
     }
     else
     {
-        throw out_of_range("wrong headsize");
+        throw out_of_range("Wrong headsize");
     }
 }
 
@@ -36,7 +36,7 @@ void screwdriver::set_head_type(int headtype)
     }
     else
     {
-        throw invalid_argument("wrong headtype");
+        throw invalid_argument("Wrong headtype");
     }
 }
 
@@ -53,7 +53,7 @@ void screwdriver::set_length(int len)
     }
     else
     {
-        throw out_of_range("wrong length");
+        throw out_of_range("Wrong length");
     }
 }
 
@@ -62,11 +62,11 @@ int screwdriver::get_length() const
     return length;
 }
 
-void screwdriver::set_price(float pricebydollar)
+void screwdriver::set_price(float prc)
 {
-    if(pricebydollar > 0)
+    if(prc > 0)
     {
-        price = pricebydollar;
+        price = prc;
     }
     else
     {
@@ -74,7 +74,7 @@ void screwdriver::set_price(float pricebydollar)
     }
 }
 
-float screwdriver::get_price()
+float screwdriver::get_price() const
 {
     return price;
 }

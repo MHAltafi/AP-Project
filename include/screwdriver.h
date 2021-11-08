@@ -15,8 +15,8 @@ class screwdriver
     int get_head_type() const;
     void set_length(int len);
     int get_length() const;
-    void set_price(float pricebydollar);
-    float get_price(); 
+    void set_price(float prc);
+    float get_price() const; 
 
     private:
     int head_size;
