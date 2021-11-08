@@ -3,12 +3,44 @@
 
 using namespace std;
 
-screwdriver::screwdriver(int headsize , int headtype , int len , float pricebydollar)
+screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
 {
-    set_head_size(headsize);
-    set_head_type(headtype);
-    set_length(len);
-    set_price(pricebydollar);
+    try
+    {
+        set_head_size(headsize);
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " Medium headsize will be set." << endl;
+        set_head_size(2);
+    }
+    try
+    {
+        set_head_type(headtype);
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " Slothead will be set." << endl;
+        set_head_type(1);
+    }
+    try
+    {
+        set_length(len);
+    }
+    catch(invalid_argument &s)
+    {
+        cout << s.what() << " Medium length will be set" << endl;
+        set_length(3);
+    }
+    try
+    {
+        set_price(prc);
+    }
+    catch(out_of_range &s)
+    {
+        cout << s.what() << " Symmetric price will be set." << endl;
+        set_price(-prc);
+    }
 }
 
 void screwdriver::set_head_size(int headsize)
@@ -19,7 +51,7 @@ void screwdriver::set_head_size(int headsize)
     }
     else
     {
-        throw out_of_range("Wrong headsize");
+        throw invalid_argument("Wrong headsize for screwdriver.");
     }
 }
 
@@ -36,7 +68,7 @@ void screwdriver::set_head_type(int headtype)
     }
     else
     {
-        throw invalid_argument("Wrong headtype");
+        throw invalid_argument("Wrong headtype for screwdriver.");
     }
 }
 
@@ -53,7 +85,7 @@ void screwdriver::set_length(int len)
     }
     else
     {
-        throw out_of_range("Wrong length");
+        throw invalid_argument("Wrong length for screwdriver.");
     }
 }
 
@@ -70,7 +102,7 @@ void screwdriver::set_price(float prc)
     }
     else
     {
-        throw invalid_argument("Wrong price");
+        throw out_of_range("Wrong price for screwdriver.");
     }
 }
 

@@ -38,7 +38,7 @@ carlight::carlight(int col , int type , int brght , float prc)
     }
     catch(out_of_range &s)
     {
-        cout << s.what() << " Symmetric price will be used." << endl;
+        cout << s.what() << " Symmetric price will be set." << endl;
         set_price(-prc);
     }
 }
@@ -51,7 +51,7 @@ void carlight::set_color(int col)
     }
     else
     {
-        throw invalid_argument("This color doesn't exist.");
+        throw invalid_argument("This color doesn't exist for carlight.");
     }
 }
 
@@ -85,7 +85,7 @@ void carlight::set_brightness(int brght)
     }
     else
     {
-        throw invalid_argument("Wrong brightness.");
+        throw invalid_argument("Wrong brightness for carlight.");
     }
 }
 
@@ -102,7 +102,7 @@ void carlight::set_price(float prc)
     }
     else
     {
-        throw out_of_range("Wrong price.");
+        throw out_of_range("Wrong price for carlight.");
     }
 }
 
