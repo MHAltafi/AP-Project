@@ -3,7 +3,7 @@
 
 using namespace std;
 
-carlight::carlight(int col , int type , int brght , float prc)
+carlight::carlight(color col , lighttype type , brightness brght , float prc)
 {
     try
     {
@@ -12,7 +12,7 @@ carlight::carlight(int col , int type , int brght , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " White will be set for color." << endl;
-        set_color(1);
+        set_color(white);
     }
     try
     {
@@ -21,7 +21,7 @@ carlight::carlight(int col , int type , int brght , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " Headlight will be set for light type." << endl;
-        set_light_type(1);
+        set_light_type(headlight);
     }
     try
     {
@@ -30,7 +30,7 @@ carlight::carlight(int col , int type , int brght , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " Brightness will be set to mid." << endl;
-        set_brightness(2);
+        set_brightness(mid);
     }
     try
     {
@@ -43,11 +43,11 @@ carlight::carlight(int col , int type , int brght , float prc)
     }
 }
 
-void carlight::set_color(int col)
+void carlight::set_color(color col)
 {
     if(col > 0 && col <=4)
     {
-        color = col;
+        chosencolor = col;
     }
     else
     {
@@ -55,12 +55,12 @@ void carlight::set_color(int col)
     }
 }
 
-int carlight::get_color() const
+color carlight::get_color() const
 {
-    return color;
+    return chosencolor;
 }
 
-void carlight::set_light_type(int type)
+void carlight::set_light_type(lighttype type)
 {
     if(type > 0 && type <= 4)
     {
@@ -72,16 +72,16 @@ void carlight::set_light_type(int type)
     }
 }
 
-int carlight::get_light_type() const
+lighttype carlight::get_light_type() const
 {
     return light_type;
 }
 
-void carlight::set_brightness(int brght)
+void carlight::set_brightness(brightness brght)
 {
     if(brght > 0 && brght <=3)
     {
-        brightness = brght;
+        chosenbrightness = brght;
     }
     else
     {
@@ -89,9 +89,9 @@ void carlight::set_brightness(int brght)
     }
 }
 
-int carlight::get_brighrness() const
+brightness carlight::get_brighrness() const
 {
-    return brightness;
+    return chosenbrightness;
 }
 
 void carlight::set_price(float prc)
@@ -109,4 +109,66 @@ void carlight::set_price(float prc)
 float carlight::get_price() const
 {
     return price;
+}
+
+void carlight::printinfo() const
+{
+    cout << "Color : ";
+    switch (chosencolor)
+    {
+    case white:
+        cout << "White" << endl;
+        break;
+    case yellow:
+        cout << "Yellow" << endl;
+        break;
+    case blue:
+        cout << "Blue" << endl;
+        break;
+    case red:
+        cout << "Red" << endl;
+        break;
+    default:
+        cout << "No such color exists" << endl;
+        break;
+    }
+
+    cout << "Light type : ";
+    switch (light_type)
+    {
+    case headlight:
+        cout << "Headlight" << endl;
+        break;
+    case fog_light:
+        cout << "Fog light" << endl;
+        break;
+    case blinker:
+        cout << "Blinker" << endl;
+        break;
+    case brake_light:
+        cout << "Brake light" << endl;
+        break;
+    default:
+        cout << "No such type of light exists" << endl;
+        break;
+    }
+
+    cout << "Brightness : ";
+    switch (chosenbrightness)
+    {
+    case low:
+        cout << "Low" << endl;
+        break;
+    case mid:
+        cout << "Mid" << endl;
+        break;
+    case high:
+        cout << "High" << endl;
+        break;
+    default:
+        cout << "No such type of brightness exists" << endl;
+        break;
+    }
+
+    cout << "Price : " << get_price() << " $" << endl;
 }

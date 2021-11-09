@@ -8,20 +8,21 @@ enum brightness {low = 1 , mid , high};
 class carlight
 {
     public:
-    carlight(int col , int type , int brght , float prc);
-    void set_color(int col);
-    int get_color() const;
-    void set_light_type(int type);
-    int get_light_type() const;
-    void set_brightness(int brght);
-    int get_brighrness() const;
+    carlight(color col , lighttype type , brightness brght , float prc);
+    void set_color(color col);
+    color get_color() const;
+    void set_light_type(lighttype type);
+    lighttype get_light_type() const;
+    void set_brightness(brightness brght);
+    brightness get_brighrness() const;
     void set_price(float prc);
     float get_price() const;
+    void printinfo() const;
 
     private:
-    int color;
-    int light_type;
-    int brightness;
+    color chosencolor;
+    lighttype light_type;
+    brightness chosenbrightness;
     float price;
 
 };

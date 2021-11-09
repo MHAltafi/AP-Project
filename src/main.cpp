@@ -14,10 +14,7 @@ int main()
     cout << "Headtype : " << x.get_head_type() << endl;
     cout << "Length : " <<  x.get_length() << endl;
     cout << "Price : " << x.get_price() << endl;
-    carlight m(6,5,6,-6);
+    carlight m(static_cast<color>(6),static_cast<lighttype>(5),static_cast<brightness>(6),-6);
     cout << "Carlight m:" << endl;
-    cout << "Color :" << m.get_color() << endl;
-    cout << "Light type :" << m.get_light_type() << endl;
-    cout << "Brightness :" << m.get_brighrness() << endl;
-    cout << "Price :" << m.get_price() << endl;
+    m.printinfo();
 }
