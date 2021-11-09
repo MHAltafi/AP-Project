@@ -3,7 +3,7 @@
 
 using namespace std;
 
-screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
+screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type headtype , screwdriver_length len , float prc)
 {
     try
     {
@@ -12,7 +12,7 @@ screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " Medium headsize will be set." << endl;
-        set_head_size(2);
+        set_head_size(medium_head);
     }
     try
     {
@@ -21,7 +21,7 @@ screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " Slothead will be set." << endl;
-        set_head_type(1);
+        set_head_type(slothead);
     }
     try
     {
@@ -30,7 +30,7 @@ screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
     catch(invalid_argument &s)
     {
         cout << s.what() << " Medium length will be set" << endl;
-        set_length(3);
+        set_length(medium_len);
     }
     try
     {
@@ -43,7 +43,7 @@ screwdriver::screwdriver(int headsize , int headtype , int len , float prc)
     }
 }
 
-void screwdriver::set_head_size(int headsize)
+void screwdriver::set_head_size(screwdriver_head_size headsize)
 {
     if(headsize > 0 && headsize <=3)
     {
@@ -55,12 +55,12 @@ void screwdriver::set_head_size(int headsize)
     }
 }
 
-int screwdriver::get_head_size() const
+screwdriver_head_size screwdriver::get_head_size() const
 {
     return head_size;
 }
 
-void screwdriver::set_head_type(int headtype)
+void screwdriver::set_head_type(screwdriver_head_type headtype)
 {
     if(headtype > 0 && headtype <= 5)
     {
@@ -72,12 +72,12 @@ void screwdriver::set_head_type(int headtype)
     }
 }
 
-int screwdriver::get_head_type() const
+screwdriver_head_type screwdriver::get_head_type() const
 {
     return head_type;
 }
 
-void screwdriver::set_length(int len)
+void screwdriver::set_length(screwdriver_length len)
 {
     if(len > 0 && len <= 5)
     {
@@ -89,7 +89,7 @@ void screwdriver::set_length(int len)
     }
 }
 
-int screwdriver::get_length() const
+screwdriver_length screwdriver::get_length() const
 {
     return length;
 }
@@ -109,4 +109,72 @@ void screwdriver::set_price(float prc)
 float screwdriver::get_price() const
 {
     return price;
+}
+
+void screwdriver::printinfo() const
+{
+    cout << "Headsize : ";
+    switch (head_size)
+    {
+    case small_head:
+        cout << "Small" << endl;
+        break;
+    case medium_head:
+        cout << "Medium" << endl;
+        break;
+    case large_head:
+        cout << "Large" << endl;
+        break;
+    default:
+        cout << "No such headsize exists" << endl;
+        break;
+    }
+
+    cout << "Headtype : ";
+    switch (head_type)
+    {
+    case slothead:
+        cout << "Slothead" << endl;
+        break;
+    case phillipshead:
+        cout << "Phillipshead" << endl;
+        break;
+    case pozidriv:
+        cout << "Pozidriv" << endl;
+        break;
+    case torx:
+        cout << "Torx" << endl;
+        break;
+    case allen:
+        cout << "Allen" << endl;
+        break;
+    default:
+        cout << "No such headtype exists" << endl;
+        break;
+    }
+
+    cout << "Length : ";
+    switch (length)
+    {
+    case extrasmall_len:
+        cout << "Extra Small" << endl;
+        break;
+    case small_len:
+        cout << "Small" << endl;
+        break;
+    case medium_len:
+        cout << "Medium" << endl;
+        break;
+    case large_len:
+        cout << "Large" << endl;
+        break;
+    case extralarge_len:
+        cout << "Extra Large" << endl;
+        break;
+    default:
+        cout << "No such length exists" << endl;
+        break;
+    }
+
+    cout << "Price : " << get_price() << " $" << endl;
 }

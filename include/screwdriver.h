@@ -8,20 +8,21 @@ enum screwdriver_length {extrasmall_len = 1 , small_len , medium_len , large_len
 class screwdriver
 {
     public:
-    screwdriver(int headsize , int headtype , int len , float pricebydollar);
-    void set_head_size(int headsize);
-    int get_head_size() const;
-    void set_head_type(int headtype);
-    int get_head_type() const;
-    void set_length(int len);
-    int get_length() const;
+    screwdriver(screwdriver_head_size headsize , screwdriver_head_type headtype , screwdriver_length len , float prc);
+    void set_head_size(screwdriver_head_size headsize);
+    screwdriver_head_size get_head_size() const;
+    void set_head_type(screwdriver_head_type headtype);
+    screwdriver_head_type get_head_type() const;
+    void set_length(screwdriver_length len);
+    screwdriver_length get_length() const;
     void set_price(float prc);
-    float get_price() const; 
+    float get_price() const;
+    void printinfo() const;
 
     private:
-    int head_size;
-    int head_type;
-    int length;
+    screwdriver_head_size head_size;
+    screwdriver_head_type head_type;
+    screwdriver_length length;
     float price;
 
 };
