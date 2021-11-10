@@ -3,118 +3,123 @@
 
 using namespace std;
 
+//tabe constructor ke ba estefade az tavabe set, maghadire avalie ra initialize mikonad
+//az try & catch estefade shode ta dar soorate throw shodan dar tavabe set, meghdare pishfarzi jaye meghdare ghalat gharar girad
 carlight::carlight(color col , lighttype type , brightness brght , float prc)
 {
-    try
+    try //try marboot be color
     {
-        set_color(col);
+        set_color(col); //farakhani tabe set
     }
-    catch(invalid_argument &s)
+    catch(invalid_argument &s) //catch marboot be color
     {
-        cout << s.what() << " White will be set for color." << endl;
-        set_color(white);
+        cout << s.what() << " White will be set for color." << endl; //tozihe meghdare pishfarz
+        set_color(white); //meghdare pishfarz dar soorate throw shodan
     }
-    try
+
+    try //try marboot be light type
     {
-        set_light_type(type);   
+        set_light_type(type);    //farakhani tabe set light type
     }
-    catch(invalid_argument &s)
+    catch(invalid_argument &s) //catch marboot be light type
     {
-        cout << s.what() << " Headlight will be set for light type." << endl;
-        set_light_type(headlight);
+        cout << s.what() << " Headlight will be set for light type." << endl; //tozihe meghdare pishfarz
+        set_light_type(headlight); //meghdare pishfarz dar soorate throw shodan
     }
-    try
+
+    try //try marboot be brightness
     {
-        set_brightness(brght);   
+        set_brightness(brght); //farakhani tabe set brightness
     }
-    catch(invalid_argument &s)
+    catch(invalid_argument &s) //catch marboot be brightness
     {
-        cout << s.what() << " Brightness will be set to mid." << endl;
-        set_brightness(mid);
+        cout << s.what() << " Brightness will be set to mid." << endl; //tozihe meghdare pishfarz
+        set_brightness(mid); //meghdare pishfarz dar soorate throw shodan
     }
-    try
+
+    try //try marboot be gheymat
     {
-        set_price(prc);  
+        set_price(prc);   //farakhani tabe set price
     }
-    catch(out_of_range &s)
+    catch(out_of_range &s) //catch marboot be gheymat
     {
-        cout << s.what() << " Symmetric price will be set." << endl;
-        set_price(-prc);
+        cout << s.what() << " Symmetric price will be set." << endl; //tozihe meghdare pishfarz
+        set_price(-prc); //prc manfi ast , pas -prc jaye gheymat gharar migirad
     }
 }
 
-void carlight::set_color(color col)
+void carlight::set_color(color col) //tabe set color
 {
-    if(col > 0 && col <=4)
+    if(col > 0 && col <=4) //check kardane vorudi color baraye vojude meghdare motabar dar enume tarif shode
     {
-        chosencolor = col;
+        chosencolor = col; //gharar dadane meghdar
     }
     else
     {
-        throw invalid_argument("This color doesn't exist for carlight.");
+        throw invalid_argument("This color doesn't exist for carlight."); //throw baraye catch e dar constructor
     }
 }
 
-color carlight::get_color() const
+color carlight::get_color() const //tabe get color ke az noe enume tarif shode ast va const chon taghiri ijad nmikonad
 {
     return chosencolor;
 }
 
-void carlight::set_light_type(lighttype type)
+void carlight::set_light_type(lighttype type) //tabe set light type
 {
-    if(type > 0 && type <= 4)
+    if(type > 0 && type <= 4) //check kardane vorudi lighttype baraye vojude meghdare motabar dar enume tarif shode
     {
-        light_type = type;
+        light_type = type; //gharar dadane meghdar
     }
     else
     {
-        throw invalid_argument("Wrong light type.");
+        throw invalid_argument("Wrong light type."); //throw baraye catch e dar constructor
     }
 }
 
-lighttype carlight::get_light_type() const
+lighttype carlight::get_light_type() const //tabe get light type ke az noe enume tarif shode ast va const chon taghiri ijad nmikonad
 {
     return light_type;
 }
 
-void carlight::set_brightness(brightness brght)
+void carlight::set_brightness(brightness brght) //tabe set brightness
 {
-    if(brght > 0 && brght <=3)
+    if(brght > 0 && brght <=3) //check kardane vorudi brightness baraye vojude meghdare motabar dar enume tarif shode
     {
-        chosenbrightness = brght;
+        chosenbrightness = brght; //gharar dadane meghdar
     }
     else
     {
-        throw invalid_argument("Wrong brightness for carlight.");
+        throw invalid_argument("Wrong brightness for carlight."); //throw baraye catch e dar constructor
     }
 }
 
-brightness carlight::get_brighrness() const
+brightness carlight::get_brighrness() const //tabe get brightness ke az noe enume tarif shode ast va const chon taghiri ijad nmikonad
 {
     return chosenbrightness;
 }
 
-void carlight::set_price(float prc)
+void carlight::set_price(float prc) //tabe set price
 {
-    if(prc > 0)
+    if(prc > 0) //check kardane mosbat boodane gheymate vorudi
     {
-        price = prc;
+        price = prc; //gharar dadane gheymat
     }
     else
     {
-        throw out_of_range("Wrong price for carlight.");
+        throw out_of_range("Wrong price for carlight."); //throw baraye catch e dar constructor
     }
 }
 
-float carlight::get_price() const
+float carlight::get_price() const //tabe get price , const chon taghiri ijad nmikonad
 {
     return price;
 }
 
-void carlight::printinfo() const
+void carlight::printinfo() const //tabe printinfo baraye chape etelaat , const chon taghiri ijad nmikonad
 {
     cout << "Color : ";
-    switch (chosencolor)
+    switch (chosencolor) //switch case baraye color bar asase enume tarif shode
     {
     case white:
         cout << "White" << endl;
@@ -134,7 +139,7 @@ void carlight::printinfo() const
     }
 
     cout << "Light type : ";
-    switch (light_type)
+    switch (light_type) //switch case baraye light type bar asase enume tarif shode
     {
     case headlight:
         cout << "Headlight" << endl;
@@ -154,7 +159,7 @@ void carlight::printinfo() const
     }
 
     cout << "Brightness : ";
-    switch (chosenbrightness)
+    switch (chosenbrightness) //switch case baraye brightness bar asase enume tarif shode
     {
     case low:
         cout << "Low" << endl;
@@ -170,5 +175,5 @@ void carlight::printinfo() const
         break;
     }
 
-    cout << "Price : " << get_price() << " $" << endl;
+    cout << "Price : " << get_price() << " $" << endl; //chape gheymat
 }
