@@ -6,6 +6,7 @@ set(SOURCES
 	src/main.cpp
     src/screwdriver.cpp
     src/carlight.cpp
+    src/tools.cpp
 )
 
 cmake_minimum_required(VERSION 3.0)

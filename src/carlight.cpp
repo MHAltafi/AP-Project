@@ -5,8 +5,9 @@ using namespace std;
 
 //tabe constructor ke ba estefade az tavabe set, maghadire avalie ra initialize mikonad
 //az try & catch estefade shode ta dar soorate throw shodan dar tavabe set, meghdare pishfarzi jaye meghdare ghalat gharar girad
-carlight::carlight(color col , lighttype type , brightness brght , float prc)
+carlight::carlight(color col , lighttype type , brightness brght , float prc , int quality):tools(quality , prc)
 {
+    
     try //try marboot be color
     {
         set_color(col); //farakhani tabe set
@@ -37,15 +38,6 @@ carlight::carlight(color col , lighttype type , brightness brght , float prc)
         set_brightness(mid); //meghdare pishfarz dar soorate throw shodan
     }
 
-    try //try marboot be gheymat
-    {
-        set_price(prc);   //farakhani tabe set price
-    }
-    catch(out_of_range &s) //catch marboot be gheymat
-    {
-        cout << s.what() << " Symmetric price will be set." << endl; //tozihe meghdare pishfarz
-        set_price(-prc); //prc manfi ast , pas -prc jaye gheymat gharar migirad
-    }
 }
 
 void carlight::set_color(color col) //tabe set color
@@ -99,7 +91,7 @@ brightness carlight::get_brighrness() const //tabe get brightness ke az noe enum
     return chosenbrightness;
 }
 
-void carlight::set_price(float prc) //tabe set price
+/*void carlight::set_price(float prc) //tabe set price
 {
     if(prc > 0) //check kardane mosbat boodane gheymate vorudi
     {
@@ -114,10 +106,11 @@ void carlight::set_price(float prc) //tabe set price
 float carlight::get_price() const //tabe get price , const chon taghiri ijad nmikonad
 {
     return price;
-}
+}*/
 
 void carlight::printinfo() const //tabe printinfo baraye chape etelaat , const chon taghiri ijad nmikonad
 {
+    cout << "Carlight" << endl;
     cout << "Color : ";
     switch (chosencolor) //switch case baraye color bar asase enume tarif shode
     {
@@ -174,6 +167,48 @@ void carlight::printinfo() const //tabe printinfo baraye chape etelaat , const c
         cout << "No such type of brightness exists" << endl;
         break;
     }
+    tools::printinfo();
+    cout << "---------------------------------------------" << endl;
 
-    cout << "Price : " << get_price() << " $" << endl; //chape gheymat
+}
+
+bool carlight::operator==(const carlight & carlight1)
+{
+    if((this->get_light_type() == carlight1.get_light_type()) && (this->get_color() == carlight1.get_color()))
+    {
+        return true;
+    }
+    return false;
+}
+
+bool carlight::operator>(const carlight & carlight1)
+{
+    if(this->get_brighrness() > carlight1.get_brighrness())
+    {
+        return true;
+    }
+    return false;
+}
+
+bool carlight::operator<(const carlight & carlight1)
+{
+    return !(*this>carlight1);
+}
+
+bool carlight::operator>=(const carlight & carlight1)
+{
+    if(this->get_brighrness() >= carlight1.get_brighrness())
+    {
+        return true;
+    }
+    return false;
+}
+
+bool carlight::operator<=(const carlight & carlight1)
+{
+    if(this->get_brighrness() <= carlight1.get_brighrness())
+    {
+        return true;
+    }
+    return false;
 }

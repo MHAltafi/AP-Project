@@ -5,7 +5,7 @@ using namespace std;
 
 //tabe constructor ke ba estefade az tavabe set, maghadire avalie ra initialize mikonad
 //az try & catch estefade shode ta dar soorate throw shodan dar tavabe set, meghdare pishfarzi jaye meghdare ghalat gharar girad
-screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type headtype , screwdriver_length len , float prc)
+screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type headtype , screwdriver_length len , float prc, int quality):tools(quality , prc)
 {
     try //try marboot be headsize
     {
@@ -37,15 +37,6 @@ screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type 
         set_length(medium_len); //meghdare pishfarz dar soorate throw shodan
     }
 
-    try //try marboot be gheymat
-    {
-        set_price(prc); //farakhani tabe set
-    }
-    catch(out_of_range &s) //catch marboot be gheymat
-    {
-        cout << s.what() << " Symmetric price will be set." << endl; //tozihe meghdare pishfarz
-        set_price(-prc); //prc manfi ast , pas -prc jaye gheymat gharar migirad
-    }
 }
 
 void screwdriver::set_head_size(screwdriver_head_size headsize) //tabe set head size
@@ -99,25 +90,10 @@ screwdriver_length screwdriver::get_length() const //tabe get length ke az noe e
     return length;
 }
 
-void screwdriver::set_price(float prc) //tabe set price
-{
-    if(prc > 0) //check kardane mosbat boodane gheymate vorudi
-    {
-        price = prc; //gharar dadane gheymat
-    }
-    else
-    {
-        throw out_of_range("Wrong price for screwdriver."); //throw baraye catch e dar constructor
-    }
-}
-
-float screwdriver::get_price() const //tabe get price , const chon taghiri ijad nmikonad
-{
-    return price;
-}
 
 void screwdriver::printinfo() const //tabe printinfo baraye chape etelaat , const chon taghiri ijad nmikonad
 {
+    cout << "Screwdriver" << endl;
     cout << "Headsize : ";
     switch (head_size) //switch case baraye head size bar asase enume tarif shode
     {
@@ -181,5 +157,47 @@ void screwdriver::printinfo() const //tabe printinfo baraye chape etelaat , cons
         break;
     }
 
-    cout << "Price : " << get_price() << " $" << endl; //chape gheymat
+    tools::printinfo();
+    cout << "---------------------------------------------" << endl;
+}
+
+bool screwdriver::operator==(const screwdriver &screw1)
+{
+    if(this->get_head_type() == screw1.get_head_type())
+    {
+        return true;
+    }
+    return false;
+}
+
+bool screwdriver::operator>(const screwdriver &screw1)
+{
+    if(this->get_head_size() > screw1.get_head_size())
+    {
+        return true;
+    }
+    return false;
+}
+
+bool screwdriver::operator<(const screwdriver &screw1)
+{
+    return !(*this>screw1);
+}
+
+bool screwdriver::operator>=(const screwdriver &screw1)
+{
+    if(this->get_head_size() >= screw1.get_head_size())
+    {
+        return true;
+    }
+    return false;
+}
+
+bool screwdriver::operator<=(const screwdriver &screw1)
+{
+    if(this->get_head_size() <= screw1.get_head_size())
+    {
+        return true;
+    }
+    return false;
 }

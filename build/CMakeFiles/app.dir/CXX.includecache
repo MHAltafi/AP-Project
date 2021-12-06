@@ -7,8 +7,14 @@
 #IncludeRegexTransform: 
 
 ../include/carlight.h
+tools.h
+../include/tools.h
 
 ../include/screwdriver.h
+tools.h
+../include/tools.h
+
+../include/tools.h
 
 /mnt/d/cpp/project/src/main.cpp
 iostream

@@ -3,11 +3,17 @@
 
 CMakeFiles/app.dir/src/carlight.cpp.o
  ../include/carlight.h
+ ../include/tools.h
  /mnt/d/cpp/project/src/carlight.cpp
 CMakeFiles/app.dir/src/main.cpp.o
  ../include/carlight.h
  ../include/screwdriver.h
+ ../include/tools.h
  /mnt/d/cpp/project/src/main.cpp
 CMakeFiles/app.dir/src/screwdriver.cpp.o
  ../include/screwdriver.h
+ ../include/tools.h
  /mnt/d/cpp/project/src/screwdriver.cpp
+CMakeFiles/app.dir/src/tools.cpp.o
+ ../include/tools.h
+ /mnt/d/cpp/project/src/tools.cpp
