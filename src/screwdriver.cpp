@@ -157,11 +157,11 @@ void screwdriver::printinfo() const //tabe printinfo baraye chape etelaat , cons
         break;
     }
 
-    tools::printinfo();
+    tools::printinfo(); //printe classe pedar
     cout << "---------------------------------------------" << endl;
 }
 
-bool screwdriver::operator==(const screwdriver &screw1)
+bool screwdriver::operator==(const screwdriver &screw1) //operatore == baraye check kardane tasavie headtype
 {
     if(this->get_head_type() == screw1.get_head_type())
     {
@@ -170,7 +170,7 @@ bool screwdriver::operator==(const screwdriver &screw1)
     return false;
 }
 
-bool screwdriver::operator>(const screwdriver &screw1)
+bool screwdriver::operator>(const screwdriver &screw1) //operatore > baraye moghayese headsize
 {
     if(this->get_head_size() > screw1.get_head_size())
     {
@@ -179,12 +179,12 @@ bool screwdriver::operator>(const screwdriver &screw1)
     return false;
 }
 
-bool screwdriver::operator<(const screwdriver &screw1)
+bool screwdriver::operator<(const screwdriver &screw1) //operatore < baraye moghayese headsize ba estefade az tabe ghabl
 {
     return !(*this>screw1);
 }
 
-bool screwdriver::operator>=(const screwdriver &screw1)
+bool screwdriver::operator>=(const screwdriver &screw1) //operatore >= baraye moghayese headsize
 {
     if(this->get_head_size() >= screw1.get_head_size())
     {
@@ -193,7 +193,7 @@ bool screwdriver::operator>=(const screwdriver &screw1)
     return false;
 }
 
-bool screwdriver::operator<=(const screwdriver &screw1)
+bool screwdriver::operator<=(const screwdriver &screw1) //operatore <= baraye moghayese headsize
 {
     if(this->get_head_size() <= screw1.get_head_size())
     {

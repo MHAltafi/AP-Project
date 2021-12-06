@@ -17,12 +17,12 @@ tools::tools(int givenquality , float prc)
 
     try
     {
-        set_quality(givenquality);
+        set_quality(givenquality); //farakhani tabe set quality
     }
-    catch(out_of_range &s)
+    catch(out_of_range &s) //catch marboot be quality
     {
-        cout << s.what() << "Quality will be set to Average" << endl;
-        set_quality(2);
+        cout << s.what() << "Quality will be set to Average" << endl; //tozihe meghdare pishfarz
+        set_quality(2); //meghdare pishfarze Average
     }
 }
 
@@ -43,7 +43,7 @@ float tools::get_price() const //tabe get price , const chon taghiri ijad nmikon
     return price;
 }
 
-void tools::set_quality(int givenquality)
+void tools::set_quality(int givenquality) //tabe set quality baraye gharar dadane maghadire 1 2 3 bar asase keyfiat
 {
     if(givenquality>0 && givenquality<4)
     {
@@ -55,7 +55,7 @@ void tools::set_quality(int givenquality)
     }
 }
 
-int tools::get_quality() const
+int tools::get_quality() const //tabe get quality , const chon taghiri ijad nmikonad
 {
     return quality;
 }
@@ -64,7 +64,7 @@ void tools::printinfo() const
 {
     cout << "Price : " << get_price() << " $" << endl; //chape gheymat
     cout << "Quality : ";
-    switch (quality) //switch case baraye brightness bar asase enume tarif shode
+    switch (quality) //switch case baraye quality
     {
     case 1:
         cout << "Low" << endl;
@@ -81,32 +81,28 @@ void tools::printinfo() const
     }
 }
 
-void tools::operator+=(const int addedprice)
+void tools::operator+=(const int addedprice) //operatore += baraye gheymat
 {
     this->set_price(this->get_price()+addedprice);
 }
 
-void tools::operator-=(const int decreasedprice)
+void tools::operator-=(const int decreasedprice) //operatore -= baraye gheymat
 {
     this->set_price(this->get_price()- decreasedprice);
 }
 
-void operator+(tools &tools1 , const int addedprice)
+void operator+(tools &tools1 , const int addedprice) //operatore + baraye ezafe shodane gheymat
 {
     tools1.set_price(tools1.get_price()+addedprice);
 }
 
-void operator+(const int addedprice, tools & tools1)
+void operator+(const int addedprice, tools & tools1) //operatore + baraye ezafe shodane gheymat ba estefade az tabe ghabl
 {
     tools1 + addedprice;
 }
 
-void operator-(tools &tools1 , const int decreasedprice)
+void operator-(tools &tools1 , const int decreasedprice) //operatore - baraye ezafe shodane gheymat
 {
     tools1.set_price(tools1.get_price()-decreasedprice);
 }
 
-void operator-(const int decreasedprice, tools & tools1)
-{
-    tools1 - decreasedprice;
-}

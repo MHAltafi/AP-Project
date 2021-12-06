@@ -91,23 +91,6 @@ brightness carlight::get_brighrness() const //tabe get brightness ke az noe enum
     return chosenbrightness;
 }
 
-/*void carlight::set_price(float prc) //tabe set price
-{
-    if(prc > 0) //check kardane mosbat boodane gheymate vorudi
-    {
-        price = prc; //gharar dadane gheymat
-    }
-    else
-    {
-        throw out_of_range("Wrong price for carlight."); //throw baraye catch e dar constructor
-    }
-}
-
-float carlight::get_price() const //tabe get price , const chon taghiri ijad nmikonad
-{
-    return price;
-}*/
-
 void carlight::printinfo() const //tabe printinfo baraye chape etelaat , const chon taghiri ijad nmikonad
 {
     cout << "Carlight" << endl;
@@ -167,12 +150,12 @@ void carlight::printinfo() const //tabe printinfo baraye chape etelaat , const c
         cout << "No such type of brightness exists" << endl;
         break;
     }
-    tools::printinfo();
+    tools::printinfo(); //printe classe pedar
     cout << "---------------------------------------------" << endl;
 
 }
 
-bool carlight::operator==(const carlight & carlight1)
+bool carlight::operator==(const carlight & carlight1) //operatore == baraye tasavie lighttype va color
 {
     if((this->get_light_type() == carlight1.get_light_type()) && (this->get_color() == carlight1.get_color()))
     {
@@ -181,7 +164,7 @@ bool carlight::operator==(const carlight & carlight1)
     return false;
 }
 
-bool carlight::operator>(const carlight & carlight1)
+bool carlight::operator>(const carlight & carlight1) //operatore > baraye moghayese brightness
 {
     if(this->get_brighrness() > carlight1.get_brighrness())
     {
@@ -190,12 +173,12 @@ bool carlight::operator>(const carlight & carlight1)
     return false;
 }
 
-bool carlight::operator<(const carlight & carlight1)
+bool carlight::operator<(const carlight & carlight1) //operatore < baraye moghayese brightness ba estefade az tabe ghabl
 {
     return !(*this>carlight1);
 }
 
-bool carlight::operator>=(const carlight & carlight1)
+bool carlight::operator>=(const carlight & carlight1) //operatore >= baraye moghayese brightness
 {
     if(this->get_brighrness() >= carlight1.get_brighrness())
     {
@@ -204,7 +187,7 @@ bool carlight::operator>=(const carlight & carlight1)
     return false;
 }
 
-bool carlight::operator<=(const carlight & carlight1)
+bool carlight::operator<=(const carlight & carlight1) //operatore <= baraye moghayese brightness
 {
     if(this->get_brighrness() <= carlight1.get_brighrness())
     {
