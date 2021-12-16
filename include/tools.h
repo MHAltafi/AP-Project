@@ -7,6 +7,7 @@ class tools
 {
     public:
     tools(int givenquality , float prc); //constructor
+    tools();
     void set_price(float prc); //tabe set baraye gheymat
     float get_price() const; //tabe get baraye gheymat
     void set_quality(int givenquality); //tabe set baraye keyfiat

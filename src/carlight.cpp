@@ -40,6 +40,11 @@ carlight::carlight(color col , lighttype type , brightness brght , float prc , i
 
 }
 
+carlight::carlight()
+{
+    
+}
+
 void carlight::set_color(color col) //tabe set color
 {
     if(col > 0 && col <=4) //check kardane vorudi color baraye vojude meghdare motabar dar enume tarif shode

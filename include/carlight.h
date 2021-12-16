@@ -15,6 +15,7 @@ class carlight : public tools//classe carlight marboot be anvae cheragh haye mas
 
     public:
     carlight(color col , lighttype type , brightness brght , float prc, int quality); //tabe constructor
+    carlight();
     void set_color(color col); //tabe set baraye color
     color get_color() const; //tabe get baraye color (az noe enume tarif shode)
     void set_light_type(lighttype type); //tabe set baraye light type

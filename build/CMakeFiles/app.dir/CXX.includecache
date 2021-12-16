@@ -16,11 +16,13 @@ tools.h
 
 ../include/tools.h
 
-/mnt/d/cpp/project/src/main.cpp
+/mnt/d/cpp/project/src/functions.cpp
 iostream
 -
 screwdriver.h
 /mnt/d/cpp/project/src/screwdriver.h
 carlight.h
 /mnt/d/cpp/project/src/carlight.h
+vector
+-
 

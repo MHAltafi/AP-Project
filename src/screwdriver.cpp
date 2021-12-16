@@ -39,6 +39,11 @@ screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type 
 
 }
 
+screwdriver::screwdriver()
+{
+    
+}
+
 void screwdriver::set_head_size(screwdriver_head_size headsize) //tabe set head size
 {
     if(headsize > 0 && headsize <=3) //check kardane vorudi headsize baraye vojude meghdare motabar dar enume tarif shode

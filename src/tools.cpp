@@ -26,6 +26,11 @@ tools::tools(int givenquality , float prc)
     }
 }
 
+tools::tools()
+{
+    
+}
+
 void tools::set_price(float prc) //tabe set price
 {
     if(prc > 0) //check kardane mosbat boodane gheymate vorudi

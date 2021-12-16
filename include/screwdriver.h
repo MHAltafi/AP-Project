@@ -15,6 +15,7 @@ class screwdriver : public tools//classe screwdriver marboot be anvae pich goosh
 
     public:
     screwdriver(screwdriver_head_size headsize , screwdriver_head_type headtype , screwdriver_length len , float prc , int quality); //tabe constructor
+    screwdriver();
     void set_head_size(screwdriver_head_size headsize); //tabe set baraye head size
     screwdriver_head_size get_head_size() const; //tabe get baraye head size (az noe enume tarif shode)
     void set_head_type(screwdriver_head_type headtype); //tabe set baraye head type
