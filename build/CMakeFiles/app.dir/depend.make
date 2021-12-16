@@ -6,14 +6,22 @@ CMakeFiles/app.dir/src/carlight.cpp.o: ../include/tools.h
 CMakeFiles/app.dir/src/carlight.cpp.o: ../src/carlight.cpp
 
 CMakeFiles/app.dir/src/functions.cpp.o: ../include/carlight.h
+CMakeFiles/app.dir/src/functions.cpp.o: ../include/mechanic.h
 CMakeFiles/app.dir/src/functions.cpp.o: ../include/screwdriver.h
 CMakeFiles/app.dir/src/functions.cpp.o: ../include/tools.h
 CMakeFiles/app.dir/src/functions.cpp.o: ../src/functions.cpp
 
 CMakeFiles/app.dir/src/main.cpp.o: ../include/carlight.h
+CMakeFiles/app.dir/src/main.cpp.o: ../include/mechanic.h
 CMakeFiles/app.dir/src/main.cpp.o: ../include/screwdriver.h
 CMakeFiles/app.dir/src/main.cpp.o: ../include/tools.h
 CMakeFiles/app.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/app.dir/src/mechanic.cpp.o: ../include/carlight.h
+CMakeFiles/app.dir/src/mechanic.cpp.o: ../include/mechanic.h
+CMakeFiles/app.dir/src/mechanic.cpp.o: ../include/screwdriver.h
+CMakeFiles/app.dir/src/mechanic.cpp.o: ../include/tools.h
+CMakeFiles/app.dir/src/mechanic.cpp.o: ../src/mechanic.cpp
 
 CMakeFiles/app.dir/src/screwdriver.cpp.o: ../include/screwdriver.h
 CMakeFiles/app.dir/src/screwdriver.cpp.o: ../include/tools.h

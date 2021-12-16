@@ -2,37 +2,45 @@
 #include "screwdriver.h"
 #include "carlight.h"
 #include <vector>
+#include "mechanic.h"
 
 using namespace std;
 
-void makescrewdriver();
-void makecarlight();
+void makescrewdriver(mechanic & karbar);
+void makecarlight(mechanic & karbar);
 
-void maketools()
+void maketools(mechanic & karbar)
 {
-    cout << "What type of tools do you want?" << endl;
-    cout << "1- Screwdrier" << endl;
-    cout << "2- Carlight" << endl;
-    cout << "Enter the number of your choice: ";
-    int choice;
-    cin >> choice;
-    while (choice > 2 || choice < 0)
+    int choice = 5;
+    while(choice != 3)
     {
-        cout << "Wrong choice. Please enter 1 for Screwdriver, or 2 for Carlight:";
+        cout << "What type of tools do you want? (enter 3 to exit)" << endl;
+        cout << "1- Screwdrier" << endl;
+        cout << "2- Carlight" << endl;
+        cout << "Enter the number of your choice: ";
         cin >> choice;
-    }
-    if(choice == 1)
-    {
-        makescrewdriver();
-    }
-    if(choice ==2)
-    {
-        makecarlight();
+        while (choice > 3 || choice < 0)
+        {
+            cout << "Wrong choice. Please enter 1 for Screwdriver, or 2 for Carlight:";
+            cin >> choice;
+        }
+        if(choice == 1)
+        {
+            makescrewdriver(karbar);
+        }
+        if(choice ==2)
+        {
+            makecarlight(karbar);
+        }
+        if(choice == 3)
+        {
+            return;
+        }
     }
     
 }
 
-void makescrewdriver()
+void makescrewdriver(mechanic & karbar)
 {
     screwdriver a;
     cout << "What type of Screwdriver Head Type do you want?" << endl;
@@ -53,7 +61,7 @@ void makescrewdriver()
         cout << s.what() <<endl;
         while(headtype > 5 || headtype < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> headtype;
         }
         a.set_head_type(static_cast<screwdriver_head_type>(headtype));   
@@ -75,10 +83,10 @@ void makescrewdriver()
         cout << s.what() <<endl;
         while(headsize > 3 || headsize < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> headsize;
         }
-        a.set_head_type(static_cast<screwdriver_head_type>(headsize));   
+        a.set_head_size(static_cast<screwdriver_head_size>(headsize));   
     }
 
     cout <<"Which length do you want for this screwdriver?" << endl;
@@ -99,7 +107,7 @@ void makescrewdriver()
         cout << s.what() <<endl;
         while(length >5 || length < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> length;
         }
         a.set_length(static_cast<screwdriver_length>(length));
@@ -121,17 +129,26 @@ void makescrewdriver()
         cout << s.what() <<endl;
         while(quality >3 || quality < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> quality;
         }
          a.set_quality(quality);
     }
 
-    //determine price ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    a.choseandset_price();
+    if(karbar.get_money() > a.get_price())
+    {
+        karbar.set_money(karbar.get_money()-a.get_price());
+        karbar.alltools.push_back(&a);
+    }
+    else
+    {
+        cout << "You don't have enough money to buy this!" << endl;
+    }
 
 }
 
-void makecarlight()
+void makecarlight(mechanic & karbar)
 {
     carlight a;
     cout << "What type of light do you want?" << endl;
@@ -151,7 +168,7 @@ void makecarlight()
         cout << s.what() <<endl;
         while(type > 4 || type < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> type;
         }
          a.set_light_type(static_cast<lighttype>(type));
@@ -174,7 +191,7 @@ void makecarlight()
         cout << s.what() <<endl;
         while(col > 4 || col < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> col;
         }
          a.set_color(static_cast<color>(col));
@@ -196,7 +213,7 @@ void makecarlight()
         cout << s.what() <<endl;
         while(brght >3 || brght < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> brght;
         }
          a.set_brightness(static_cast<brightness>(brght));
@@ -218,12 +235,21 @@ void makecarlight()
         cout << s.what() <<endl;
         while(quality >3 || quality < 0)
         {
-            cout << " Wrong choice, Please enter a valid one:" << endl;
+            cout << "Wrong choice, Please enter a valid one:" << endl;
             cin >> quality;
         }
          a.set_quality(quality);
     }
 
-    //determine price ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    a.choseandset_price();
+    if(karbar.get_money() > a.get_price())
+    {
+        karbar.set_money(karbar.get_money()-a.get_price());
+        karbar.alltools.push_back(&a);
+    }
+    else
+    {
+        cout << "You don't have enough money to buy this!" << endl;
+    }
 
 }

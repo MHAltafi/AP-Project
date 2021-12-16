@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/src/carlight.cpp.o"
   "CMakeFiles/app.dir/src/functions.cpp.o"
   "CMakeFiles/app.dir/src/main.cpp.o"
+  "CMakeFiles/app.dir/src/mechanic.cpp.o"
   "CMakeFiles/app.dir/src/screwdriver.cpp.o"
   "CMakeFiles/app.dir/src/tools.cpp.o"
   "app"

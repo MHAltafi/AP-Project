@@ -41,7 +41,7 @@ screwdriver::screwdriver(screwdriver_head_size headsize , screwdriver_head_type 
 
 screwdriver::screwdriver()
 {
-    
+
 }
 
 void screwdriver::set_head_size(screwdriver_head_size headsize) //tabe set head size
@@ -205,4 +205,76 @@ bool screwdriver::operator<=(const screwdriver &screw1) //operatore <= baraye mo
         return true;
     }
     return false;
+}
+
+void screwdriver::choseandset_price()
+{
+    set_price(15);
+    if(head_type == slothead)
+    {
+        *this + 5;
+    }
+    else if(head_type == phillipshead)
+    {
+        *this + 6;
+    }
+    else if(head_type == pozidriv)
+    {
+        *this + 5;
+    }
+    else if(head_type == torx)
+    {
+        *this + 4;
+    }
+    else if(head_type == allen)
+    {
+        *this + 5;
+    }
+
+    if(head_size == small_head)
+    {
+        *this + 1;
+    }
+    else if(head_size == medium_head)
+    {
+        *this + 2;   
+    }
+    else if(head_size == large_head)
+    {
+        *this + 3;
+    }
+    
+    if(length == extrasmall_len)
+    {
+        *this + 1;
+    }
+    else if(length == small_len)
+    {
+        *this + 2;
+    }
+    else if(length == medium_len)
+    {
+        *this + 3;
+    }
+    else if(length == large_len)
+    {
+        *this + 4;
+    }
+    else if(length == extralarge_len)
+    {
+        *this + 5;
+    }
+
+    if(get_quality() == 1)
+    {
+        *this + 1;
+    }
+    else if(get_quality() == 2)
+    {
+        *this + 3;
+    }
+    else if(get_quality() == 3)
+    {
+        *this + 5;
+    }
 }

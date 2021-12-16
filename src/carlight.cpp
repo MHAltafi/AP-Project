@@ -42,7 +42,7 @@ carlight::carlight(color col , lighttype type , brightness brght , float prc , i
 
 carlight::carlight()
 {
-    
+
 }
 
 void carlight::set_color(color col) //tabe set color
@@ -199,4 +199,52 @@ bool carlight::operator<=(const carlight & carlight1) //operatore <= baraye mogh
         return true;
     }
     return false;
+}
+
+void carlight::choseandset_price()
+{
+    set_price(11);
+
+    if(light_type == headlight)
+    {
+        *this + 4;
+    }
+    else if(light_type == fog_light)
+    {
+        *this + 3;
+    }
+    else if(light_type == blinker)
+    {
+        *this + 2;
+    }
+    else if(light_type == brake_light)
+    {
+        *this +3;
+    }
+    
+    if(get_quality() == 1)
+    {
+        *this + 1;
+    }
+    else if(get_quality() == 2)
+    {
+        *this + 4;
+    }
+    else if(get_quality() == 3)
+    {
+        *this + 7;
+    }
+
+    if(chosenbrightness == low)
+    {
+        *this + 1;
+    }
+    else if(chosenbrightness == mid)
+    {
+        *this +3;
+    }
+    else if(chosenbrightness == high)
+    {
+        *this + 5;
+    }
 }

@@ -204,6 +204,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mechanic.o: src/mechanic.cpp.o
+
+.PHONY : src/mechanic.o
+
+# target to build an object file
+src/mechanic.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mechanic.cpp.o
+.PHONY : src/mechanic.cpp.o
+
+src/mechanic.i: src/mechanic.cpp.i
+
+.PHONY : src/mechanic.i
+
+# target to preprocess a source file
+src/mechanic.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mechanic.cpp.i
+.PHONY : src/mechanic.cpp.i
+
+src/mechanic.s: src/mechanic.cpp.s
+
+.PHONY : src/mechanic.s
+
+# target to generate assembly for a file
+src/mechanic.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mechanic.cpp.s
+.PHONY : src/mechanic.cpp.s
+
 src/screwdriver.o: src/screwdriver.cpp.o
 
 .PHONY : src/screwdriver.o
@@ -276,6 +303,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mechanic.o"
+	@echo "... src/mechanic.i"
+	@echo "... src/mechanic.s"
 	@echo "... src/screwdriver.o"
 	@echo "... src/screwdriver.i"
 	@echo "... src/screwdriver.s"
