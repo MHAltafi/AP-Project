@@ -38,23 +38,3 @@ vector
 mechanic.h
 /mnt/d/cpp/project/src/mechanic.h
 
-/mnt/d/cpp/project/src/main.cpp
-iostream
--
-screwdriver.h
-/mnt/d/cpp/project/src/screwdriver.h
-carlight.h
-/mnt/d/cpp/project/src/carlight.h
-vector
--
-mechanic.h
-/mnt/d/cpp/project/src/mechanic.h
-
-/mnt/d/cpp/project/src/mechanic.cpp
-iostream
--
-mechanic.h
-/mnt/d/cpp/project/src/mechanic.h
-vector
--
-

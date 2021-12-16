@@ -207,7 +207,7 @@ bool screwdriver::operator<=(const screwdriver &screw1) //operatore <= baraye mo
     return false;
 }
 
-void screwdriver::choseandset_price()
+void screwdriver::choseandset_price() //tabe gheymat gozari bar asase vizhegi hayi ke shakhs mikhahad, az operatore overload shode + estefade shode
 {
     set_price(15);
     if(head_type == slothead)

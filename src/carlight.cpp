@@ -201,7 +201,7 @@ bool carlight::operator<=(const carlight & carlight1) //operatore <= baraye mogh
     return false;
 }
 
-void carlight::choseandset_price()
+void carlight::choseandset_price() //tabe gheymat gozari bar asase vizhegi hayi ke shakhs mikhahad, az operatore overload shode + estefade shode
 {
     set_price(11);
 

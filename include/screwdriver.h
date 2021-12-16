@@ -28,7 +28,7 @@ class screwdriver : public tools//classe screwdriver marboot be anvae pich goosh
     bool operator<(const screwdriver &screw1); //operatore < baraye moghayese headsize
     bool operator>=(const screwdriver &screw1); //operatore >= baraye moghayese headsize
     bool operator<=(const screwdriver &screw1); //operatore <= baraye moghayese headsize
-    void choseandset_price();
+    void choseandset_price(); //tabe gheymat gozari bar asase vizhegi hayi ke shakhs mikhahad, az operatore overload shode + estefade shode
 
     private:
     screwdriver_head_size head_size; //estefade az enum baraye tarife noe head size

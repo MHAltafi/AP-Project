@@ -1,7 +1,7 @@
 #include<iostream>
 #include "screwdriver.h"
 #include "carlight.h"
-#include <vector>
+#include<vector>
 #include "mechanic.h"
 
 using namespace std;
@@ -19,23 +19,6 @@ int main()
     cin >> money;
     mechanic karbar(money,name);
     maketools(karbar);
-
-    /*alltools.push_back(&a);
-    alltools.push_back(&d);
-
-    tools * c = nullptr;
-    screwdriver *x = nullptr;
-    carlight * y = nullptr;
-    x = dynamic_cast<screwdriver*>(alltools[0]);
-    if(x != nullptr)
-    {
-        cout << "kar kard" << endl;
-    }
-    x = dynamic_cast<screwdriver *>(alltools[1]);
-    if(x != nullptr)
-    {
-        cout << "kar nkard" << endl;
-    }*/
     
 
 }

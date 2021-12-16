@@ -28,7 +28,7 @@ class carlight : public tools//classe carlight marboot be anvae cheragh haye mas
     bool operator<(const carlight & carlight1); //operatore < baraye moghayese brightness
     bool operator>=(const carlight & carlight1); //operatore >= baraye moghayese brightness
     bool operator<=(const carlight & carlight1); //operatore <= baraye moghayese brightness
-    void choseandset_price();
+    void choseandset_price(); //tabe gheymat gozari bar asase vizhegi hayi ke shakhs mikhahad, az operatore overload shode + estefade shode
 
     private:
     color chosencolor; //estefade az enum baraye tarife noe color
