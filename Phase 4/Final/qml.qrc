@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Allboughttools.qml</file>
+        <file>Boughtcarlights.qml</file>
+        <file>Boughtscrewdrivers.qml</file>
+        <file>Carlightbrightness.qml</file>
+        <file>Carlightcolor.qml</file>
+        <file>Carlighttype.qml</file>
+        <file>Incrementbalance.qml</file>
+        <file>MechanicLogin.qml</file>
+        <file>OptionPage.qml</file>
+        <file>Quality.qml</file>
+        <file>Quality1.qml</file>
+        <file>Screwdriverheadsize.qml</file>
+        <file>Screwdriverheadtype.qml</file>
+        <file>Screwdriverlength.qml</file>
+        <file>1.png</file>
+        <file>2.jpg</file>
+        <file>3.jpg</file>
+        <file>4.png</file>
+        <file>5.png</file>
+        <file>6.png</file>
+        <file>7.png</file>
+        <file>8.png</file>
+        <file>9.png</file>
+        <file>10.png</file>
+    </qresource>
+</RCC>
